@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0,width=device-width">
+
+    <title></title>
+    <style>
+        #modal{
+            z-index: 100000;
+            display: none;
+            position: fixed !important;
+            _position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            border: 0;
+            opacity: .6;
+            filter: alpha(opacity=60);
+        }
+        .tips {
+            z-index: 100000;
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        .tips .tip {
+            width: 252px;
+            text-align: center;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            padding-left: -15px;
+            padding-right: -15px;
+            background-color: #fff;
+        }
+        .tips .tip .text {
+            padding: 40px 35px;
+            border-bottom: 1px solid #ededed;
+        }
+    </style>
+</head>
+<body>
+<div id="modal"></div>
+<div id="tips" class="tips">
+    <div class="tip">
+        <div class="text">再按一次退出程序</div>
+    </div>
+</div>
+</body>
+<script src="jquery-2.1.1.js"></script>
+<script src="a1.js"></script>
+</html>
