@@ -1,2 +1,7 @@
 # webapp-historyBack
-由于安全原因javascript不允许修改history里已有的url链接，但可以使用pushState方法往history里增加url链接，并且提供popstate事件监测从history栈里弹出url。我们可以利用这一点，在WebApp加载主界面后先往history里压入“#”链接，然后监听popstate事件，在Android手机的浏览器，按下物理返回键默认的操作是执行window.history.back()，此时将触发popstate事件。收到popstate事件时代码显示“再按一次退出程序”div顶层标签，此时history栈已经为空，如用户再次按下物理返回键将执行默认操作回到微信。接着，我们要设定一个定时器，在指定的时间（比如2秒）后如用户没有再次按下物理返回键将再次往history里压入“#”链接，并隐藏“再按一次退出程序”div顶层标签，等待用户下一次按下物理返回键. 监听popstate事件的代码稍作修改就可以用于任意控制单页应用中javascript生成的任意动态页面的跳转，此方法可以在微信公众号WebApp中使用
+
+
+由于安全原因javascript不允许修改history里已有的url链接，但可以使用pushState方法往history里增加url链接，并且提供popstate事件监测从history栈里弹出url。我们可以利用这一点，在WebApp加载主界面后先往history里压入“#”链接，然后监听popstate事件，在Android手机的浏览器，按下物理返回键默认的操作是执行window.history.back()，此时将触发popstate事件。收到popstate事件时代码显示“再按一次退出程序”div顶层标签，此时history栈已经为空，如用户再次按下物理返回键将执行默认操作回到微信。接着，我们要设定一个定时器，在指定的时间（比如2秒）后如用户没有再次按下物理返回键将再次往history里压入“#”链接，并隐藏“再按一次退出程序”div顶层标签，等待用户下一次按下物理返回键. 
+
+
+监听popstate事件的代码稍作修改就可以用于任意控制单页应用中javascript生成的任意动态页面的跳转，此方法可以在微信公众号WebApp中使用
